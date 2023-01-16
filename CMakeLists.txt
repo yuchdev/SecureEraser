@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.20)
 
 include(cmake/prelude.cmake)
 
@@ -15,7 +15,6 @@ include(cmake/variables.cmake)
 include(cmake/get-win32-winnt.cmake)
 
 # ---- Declare executable ----
-
 add_executable(cpp-template_exe src/main.cpp)
 add_executable(cpp-template::exe ALIAS cpp-template_exe)
 
@@ -29,17 +28,6 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
   include(cmake/install-rules.cmake)
 endif()
 
-# ---- Developer mode ----
-if(NOT cpp-template_DEVELOPER_MODE)
-  return()
-elseif(NOT PROJECT_IS_TOP_LEVEL)
-  message(
-      AUTHOR_WARNING
-      "Developer mode is intended for developers of cpp-template"
-  )
-endif()
-
-include(cmake/dev-mode.cmake)
 include(CTest)
 enable_testing()
 
@@ -47,3 +35,8 @@ if(WIN32)
     get_win32_winnt(ver)
     add_definitions(-D_WIN32_WINNT=${ver})
 endif()
+
+add_subdirectory(common)
+add_subdirectory(appcli)
+add_subdirectory(analytics)
+add_subdirectory(statistics)
