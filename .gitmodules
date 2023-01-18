@@ -2,3 +2,7 @@
 	path = winapi-helpers
 	url = https://github.com/yuchdev/WinapiHelpers
 	branch = master
+[submodule "cryptography"]
+	path = cryptography
+	url = https://github.com/yuchdev/cryptography
+	branch = master
