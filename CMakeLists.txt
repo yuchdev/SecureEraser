@@ -33,5 +33,4 @@ endif()
 # ---- Solution content ----
 add_subdirectory(common)
 add_subdirectory(appcli)
-add_subdirectory(cryptography)
 add_subdirectory(winapi-helpers)
