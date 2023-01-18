@@ -1,0 +1,4 @@
+[submodule "WinapiHelpers"]
+	path = winapi-helpers
+	url = https://github.com/yuchdev/WinapiHelpers
+	branch = master
