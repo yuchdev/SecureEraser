@@ -6,3 +6,7 @@
 	path = cryptography
 	url = https://github.com/yuchdev/cryptography
 	branch = master
+[submodule "eraser"]
+	path = eraser
+	url = https://github.com/yuchdev/eraser.git
+	branch = master
