@@ -16,7 +16,7 @@ add_executable(${APPCLI_TARGET} ${APPCLI_SOURCES})
 
 # ---- Cross-compiler options ----
 # Set C++17 as the standard
-target_compile_features(${WINAPI_HELPERS_TARGET} PUBLIC cxx_std_17)
+target_compile_features(${APPCLI_TARGET} PUBLIC cxx_std_17)
 
 # ---- System-specific options ----
 
@@ -31,7 +31,7 @@ target_include_directories(${APPCLI_TARGET}
 )
 
 # ---- Library dependencies ----
-target_link_libraries(${ERASER_TARGET}
+target_link_libraries(${APPCLI_TARGET}
     PRIVATE
         ${Boost_LIBRARIES}
         winapi_helpers
@@ -44,6 +44,6 @@ if(${BOOST_ROOT})
     add_subdirectory(test/functional_test)
 endif()
 
-# ---- Additional bulid steps ----
+# ---- Additional build steps ----
 
 # ---- Install rules ----
