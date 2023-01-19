@@ -15,6 +15,7 @@ include(cmake/get-win32-winnt.cmake)
 
 # ---- Global properties ----
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 # ---- Cross-compiler options ----
 
