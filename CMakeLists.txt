@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 include(cmake/prelude.cmake)
 
 project(
-    dsa_license_checker
-    VERSION 0.1.0
-    DESCRIPTION "Proof of concept of using DSA public key algorithm for software licensing"
+    secure_eraser
+    VERSION 1.0.0
+    DESCRIPTION "Secure file eraser for NTFS/exFAT file systems"
     LANGUAGES CXX
 )
 
@@ -14,11 +14,6 @@ include(cmake/get-win32-winnt.cmake)
 
 # ---- Global properties ----
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-# ---- Install rules ----
-if(NOT CMAKE_SKIP_INSTALL_RULES)
-  include(cmake/install-rules.cmake)
-endif()
 
 # ---- Enable testing ----
 include(CTest)
@@ -31,6 +26,12 @@ if(WIN32)
 endif()
 
 # ---- Solution content ----
-add_subdirectory(common)
-add_subdirectory(appcli)
 add_subdirectory(winapi-helpers)
+add_subdirectory(eraser)
+add_subdirectory(appcli)
+
+# ---- Install rules ----
+if(NOT CMAKE_SKIP_INSTALL_RULES)
+    include(cmake/install-rules.cmake)
+endif()
+

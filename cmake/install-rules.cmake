@@ -1,5 +1,5 @@
 install(
-    TARGETS cpp-template_exe
+    TARGETS winapi_helpers eraser appcli
     RUNTIME COMPONENT cpp-template_Runtime
 )
 
