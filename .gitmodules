@@ -1,12 +1,16 @@
 [submodule "WinapiHelpers"]
 	path = winapi-helpers
-	url = https://github.com/yuchdev/WinapiHelpers
+	url = https://github.com/yuchdev/WinapiHelpers.git
 	branch = master
 [submodule "cryptography"]
 	path = cryptography
-	url = https://github.com/yuchdev/cryptography
+	url = https://github.com/yuchdev/cryptography.git
 	branch = master
 [submodule "eraser"]
 	path = eraser
 	url = https://github.com/yuchdev/eraser.git
+	branch = master
+[submodule "plog"]
+	path = plog
+	url = https://github.com/SergiusTheBest/plog.git
 	branch = master
