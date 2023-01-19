@@ -1,3 +1,4 @@
+# ---- Project header ----
 cmake_minimum_required(VERSION 3.20)
 include(cmake/prelude.cmake)
 
@@ -15,11 +16,9 @@ include(cmake/get-win32-winnt.cmake)
 # ---- Global properties ----
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-# ---- Enable testing ----
-include(CTest)
-enable_testing()
+# ---- Cross-compiler options ----
 
-# ---- System-specific flags ----
+# ---- System-specific options ----
 if(WIN32)
     get_win32_winnt(ver)
     add_definitions(-D_WIN32_WINNT=${ver})
@@ -30,8 +29,11 @@ add_subdirectory(winapi-helpers)
 add_subdirectory(eraser)
 add_subdirectory(appcli)
 
+# ---- Enable testing ----
+include(CTest)
+enable_testing()
+
 # ---- Install rules ----
 if(NOT CMAKE_SKIP_INSTALL_RULES)
     include(cmake/install-rules.cmake)
 endif()
-
