@@ -1,6 +1,7 @@
 # ---- Project header ----
 cmake_minimum_required(VERSION 3.20)
 include(cmake/prelude.cmake)
+include(cmake/update-submodules.cmake)
 
 project(
     secure_eraser
@@ -12,6 +13,15 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 include(cmake/get-win32-winnt.cmake)
+
+# Call the function with the submodules list passed in as a command line parameter, e.g.
+# cmake .. -DUSE_MODULES="winapi-helpers;eraser;plog"
+if (DEFINED USE_MODULES)
+    update_submodules("${USE_MODULES}")
+else()
+    # Update all submodules if the parameter is not passed in
+    update_submodules()
+endif()
 
 # ---- Global properties ----
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)

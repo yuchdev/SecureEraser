@@ -7,13 +7,19 @@ Generate CMake config files, and run build using the active toolset (MSVC for Wi
 ### Windows
 
 ```
-cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_VERSION=6.1
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_VERSION=10.1
 ```
 
 ### Windows with DLL configuration
 
 ```
-cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_VERSION=6.1 -DBUILD_SHARED_LIBS=ON
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_VERSION=10.1 -DBUILD_SHARED_LIBS=ON
+```
+
+### Windows with custom submodules list
+
+```
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_VERSION=10.1 -DUSE_MODULES="winapi-helpers;eraser;plog"
 ```
 
 ### Linux
