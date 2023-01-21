@@ -21,7 +21,6 @@ target_compile_features(${APPCLI_TARGET} PUBLIC cxx_std_17)
 # ---- System-specific options ----
 
 # ---- Include directories ----
-add_dependencies(eraser)
 target_include_directories(${APPCLI_TARGET}
     PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
