@@ -45,7 +45,6 @@ endif()
 # ---- Solution content ----
 add_submodule(winapi-helpers)
 add_submodule(eraser)
-add_submodule(cryptography)
 add_submodule(appcli)
 
 # ---- Enable testing ----
