@@ -43,9 +43,9 @@ if(WIN32)
 endif()
 
 # ---- Solution content ----
-add_submodule(winapi-helpers)
-add_submodule(eraser)
-add_submodule(appcli)
+add_subdirectory(winapi-helpers)
+add_subdirectory(eraser)
+add_subdirectory(appcli)
 
 # ---- Enable testing ----
 include(CTest)
