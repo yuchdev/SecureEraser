@@ -1,11 +1,3 @@
-/* 2017-2020 WEBGEARS SERVICES LIMITED (c) All Rights Reserved. 
- * Proprietary and confidential.
- * The Software and any accompanying documentation are copyrighted and protected 
- * by copyright laws and international copyright treaties, as well as other 
- * intellectual property laws and treaties.
- * Unauthorized copying of this file, via any medium is strictly prohibited.
- */
-
 #pragma once
 #include <memory>
 #include <string>
@@ -47,7 +39,10 @@ public:
         return _version;
     }
 
-
+    const std::string erase_filename() const
+    {
+        return _erase_filename;
+    }
 
 private:
 
@@ -60,7 +55,7 @@ private:
     /// Log filename if erase
     std::string _erase_filename;
 
-    ///
+    /// All options
     boost::program_options::options_description cmd_options_description;
 };
 
