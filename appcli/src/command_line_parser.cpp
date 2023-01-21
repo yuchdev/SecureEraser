@@ -4,9 +4,9 @@
 #include <algorithm>
 #include <boost/filesystem.hpp>
 
-#include <panic_service/command_line_parser.h>
+#include <appcli/command_line_parser.h>
 
-using namespace panic;
+using namespace appcli;
 
 namespace po = boost::program_options;
 namespace bf = boost::filesystem;

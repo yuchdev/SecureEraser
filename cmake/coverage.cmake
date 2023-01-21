@@ -1,5 +1,3 @@
-# ---- Variables ----
-
 # We use variables separate from what CTest uses, because those have
 # customization issues
 set(

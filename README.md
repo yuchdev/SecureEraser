@@ -19,7 +19,7 @@ cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERS
 ### Windows with custom submodules list
 
 ```
-cd cm	 -DCMAKE_SYSTEM_VERSION=10 -DUSE_MODULES="winapi-helpers;eraser;plog"
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DUSE_MODULES="winapi-helpers eraser plog"
 ```
 
 ### Linux
@@ -30,7 +30,12 @@ cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release
 
 ### Build using active toolchain
 ```
-cmake --build . --clean-first --config Debug --parallel 4 --verbose
+cmake --build . --config Debug --parallel 2 --verbose
+```
+
+### Clean rebuild
+```
+cmake --build . --clean-first --config Debug --parallel 2 --verbose
 ```
 
 ### Using with Conan

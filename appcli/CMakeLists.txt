@@ -26,6 +26,7 @@ target_include_directories(${APPCLI_TARGET}
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
     PRIVATE
         ${CMAKE_SOURCE_DIR}/plog/include
+        ${Boost_INCLUDE_DIRS}
 )
 
 # ---- Library dependencies ----

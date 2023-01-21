@@ -22,8 +22,7 @@ cmake_policy(SET CMP0065 NEW)
 # Call the function with the submodules list passed in as a command line parameter, e.g.
 # cmake .. -DUSE_MODULES="winapi-helpers eraser plog"
 if (DEFINED USE_MODULES)
-    set(USE_MODULES "${USE_MODULES}")
-    string(REPLACE " " ";" USE_MODULES "${USE_MODULES}")
+    # Convert space-separated string into Cmake ;-separated list
     update_submodules("${USE_MODULES}")
 else()
     # Update all submodules if the parameter is not passed in
@@ -44,9 +43,10 @@ if(WIN32)
 endif()
 
 # ---- Solution content ----
-add_subdirectory(winapi-helpers)
-add_subdirectory(eraser)
-add_subdirectory(appcli)
+add_submodule(winapi-helpers)
+add_submodule(eraser)
+add_submodule(cryptography)
+add_submodule(appcli)
 
 # ---- Enable testing ----
 include(CTest)

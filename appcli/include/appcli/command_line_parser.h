@@ -6,7 +6,7 @@
 // The header contains command-line parser for the PanicButton service application
 // It uses Boost.ProgramOptions
 
-namespace panic {
+namespace appcli {
 
 /**@brief Storage for all passed and default command-line params */
 class CommandLineParams {
