@@ -25,8 +25,6 @@ target_include_directories(${APPCLI_TARGET}
     PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
     PRIVATE
-        ${CMAKE_SOURCE_DIR}/winapi-helpers/include
-        ${CMAKE_SOURCE_DIR}/eraser/include
         ${CMAKE_SOURCE_DIR}/plog/include
 )
 

@@ -1,0 +1,7 @@
+function(safe_directory)
+    set(DIR ${CMAKE_SOURCE_DIR})
+    if(NOT "${ARGV0}" STREQUAL "")
+        set(DIR "${ARGV0}")
+    endif()
+    execute_process(COMMAND git config --global --add safe.directory ${DIR})
+endfunction()

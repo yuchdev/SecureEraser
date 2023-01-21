@@ -13,25 +13,29 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 include(cmake/get-win32-winnt.cmake)
+include(cmake/safe-directory.cmake)
 
 # Set policies and stop the script on the first error
 cmake_policy(SET CMP0046 NEW)
 cmake_policy(SET CMP0065 NEW)
 
 # Call the function with the submodules list passed in as a command line parameter, e.g.
-# cmake .. -DUSE_MODULES="winapi-helpers;eraser;plog"
+# cmake .. -DUSE_MODULES="winapi-helpers eraser plog"
 if (DEFINED USE_MODULES)
+    set(USE_MODULES "${USE_MODULES}")
+    string(REPLACE " " ";" USE_MODULES "${USE_MODULES}")
     update_submodules("${USE_MODULES}")
 else()
     # Update all submodules if the parameter is not passed in
     update_submodules()
 endif()
 
+# Declare project directory safe by calling `git --add safe.directory`
+safe_directory()
+
 # ---- Global properties ----
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
-
-# ---- Cross-compiler options ----
 
 # ---- System-specific options ----
 if(WIN32)

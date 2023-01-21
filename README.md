@@ -7,7 +7,7 @@ Generate CMake config files, and run build using the active toolset (MSVC for Wi
 ### Windows
 
 ```
-cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=10
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=6.1
 ```
 
 ### Windows with DLL configuration
