@@ -26,6 +26,8 @@ target_include_directories(${APPCLI_TARGET}
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
     PRIVATE
         ${CMAKE_SOURCE_DIR}/plog/include
+        ${CMAKE_SOURCE_DIR}/eraser/include
+        ${CMAKE_SOURCE_DIR}/winapi-helpers/include
         ${Boost_INCLUDE_DIRS}
 )
 
@@ -33,7 +35,6 @@ target_include_directories(${APPCLI_TARGET}
 target_link_libraries(${APPCLI_TARGET}
     PRIVATE
         ${Boost_LIBRARIES}
-        winapi_helpers
         eraser
 )
 
