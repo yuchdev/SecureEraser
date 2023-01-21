@@ -4,14 +4,14 @@
 function(update_submodules)
     if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.gitmodules")
         if (NOT ARGC)
-            execute_process(COMMAND git submodule update --init --recursive
+            execute_process(COMMAND git submodule update --init --remote --force --recursive
                             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
         else()
             set(USE_MODULES "${ARGV}")
             string(REPLACE " " ";" USE_MODULES "${USE_MODULES}")
             execute_process(COMMAND git submodule init ${USE_MODULES}
                             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-            execute_process(COMMAND git submodule update --recursive ${USE_MODULES}
+            execute_process(COMMAND git submodule update --remote --force --recursive ${USE_MODULES}
                             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
         endif()
     else()
