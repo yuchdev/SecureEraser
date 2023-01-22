@@ -45,7 +45,7 @@ endif()
 # ---- Solution content ----
 add_subdirectory(winapi-helpers)
 add_subdirectory(eraser)
-add_subdirectory(appcli)
+add_subdirectory(eraser_cli)
 
 # ---- Enable testing ----
 include(CTest)

@@ -1,6 +1,6 @@
 # ---- Project header ----
-set(APPCLI_TARGET appcli)
-project(${APPCLI_TARGET} CXX)
+set(ERASER_CLI_TARGET eraser_cli)
+project(${ERASER_CLI_TARGET} CXX)
 
 # ---- Frameworks and components ----
 find_package(Boost ${BOOST_MIN_VERSION} COMPONENTS program_options REQUIRED)
@@ -10,18 +10,18 @@ find_package(Boost ${BOOST_MIN_VERSION} COMPONENTS program_options REQUIRED)
 include(sources.cmake)
 
 # Create the application target
-add_executable(${APPCLI_TARGET} ${APPCLI_SOURCES})
+add_executable(${ERASER_CLI_TARGET} ${ERASER_CLI_SOURCES})
 
 # ---- Global properties ----
 
 # ---- Cross-compiler options ----
 # Set C++17 as the standard
-target_compile_features(${APPCLI_TARGET} PUBLIC cxx_std_17)
+target_compile_features(${ERASER_CLI_TARGET} PUBLIC cxx_std_17)
 
 # ---- System-specific options ----
 
 # ---- Include directories ----
-target_include_directories(${APPCLI_TARGET}
+target_include_directories(${ERASER_CLI_TARGET}
     PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
     PRIVATE
@@ -32,7 +32,7 @@ target_include_directories(${APPCLI_TARGET}
 )
 
 # ---- Library dependencies ----
-target_link_libraries(${APPCLI_TARGET}
+target_link_libraries(${ERASER_CLI_TARGET}
     PRIVATE
         ${Boost_LIBRARIES}
         eraser
