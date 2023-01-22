@@ -40,9 +40,8 @@ target_link_libraries(${ERASER_CLI_TARGET}
 
 # ---- Enable testing ----
 # We use Boost Test, so include it only if Boost root is known
-if(${BOOST_ROOT})
-    add_subdirectory(test/functional_test)
-endif()
+add_subdirectory(test/functional)
+
 
 # ---- Additional build steps ----
 
