@@ -16,6 +16,12 @@ cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug
 cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=6.1
 ```
 
+### Windows with custom Boost location
+
+```
+cmake .. -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug -DBOOST_ROOT=C:/boost
+```
+
 ### Windows with DLL configuration
 
 ```
